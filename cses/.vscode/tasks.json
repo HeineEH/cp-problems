@@ -49,7 +49,7 @@
             "command": "bash",
             "args": [
                 "-c",
-                "/usr/bin/cp ${workspaceFolder}/cses/${input:inputTemplateFilename} ${workspaceFolder}/${input:inputFileBasename}.cpp",
+                "/usr/bin/cp ${workspaceFolder}/${input:inputTemplateFilename} ${workspaceFolder}/${input:inputFileBasename}.cpp",
             ],
             "problemMatcher": []
         }
