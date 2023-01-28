@@ -1,0 +1,71 @@
+{
+    "tasks": [
+        {
+            "label": "COMPILE active C++ file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "-std=c++11",
+                "${file}",
+                "-o",
+                "${fileDirname}/_compiled/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "DEBUG active C++ file",
+            "command": "/usr/bin/gdb",
+            "args": [
+                "${fileDirname}/_compiled/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "COPY template to new C++ file",
+            "command": "bash",
+            "args": [
+                "-c",
+                "/usr/bin/cp ${workspaceFolder}/cses/${input:inputTemplateFilename} ${workspaceFolder}/${input:inputFileBasename}.cpp",
+            ],
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "inputTemplateFilename",
+            "type": "promptString",
+            "default": "_temp.cpp",
+            "description": "The name of the template file"
+        },
+        {
+            "id": "inputFileBasename",
+            "type": "promptString",
+            "description": "The basename of the file to copy to"
+        }
+    ],
+    "version": "2.0.0"
+}
