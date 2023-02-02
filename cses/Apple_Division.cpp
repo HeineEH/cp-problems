@@ -25,6 +25,8 @@ vector<ll> allCombs(int idx) {
 }
 
 int main() {
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    
     int n;
     cin >> n;
     rep(i, 0, n) cin >> apples[i];

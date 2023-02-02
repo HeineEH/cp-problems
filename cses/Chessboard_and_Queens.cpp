@@ -37,6 +37,8 @@ void solve(int queensPlaced) {
 
 
 int main() {
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    
     for (auto &a : R) {
         for (auto &b : a) {
             char c;

@@ -8,6 +8,8 @@ const ll INF = LLONG_MAX;
 ll distances[500][500];
 
 int main() {
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
+    
     int n, m, q;
     cin >> n >> m >> q;
 
